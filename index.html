@@ -1,0 +1,474 @@
+<!-- 
+	Author : Salwa Mehreen
+	Date : 2/9/25
+-->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MisMatch by Salwa</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <!-- Responsive -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Landing page */
+			#bg-video {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				z-index: -1; /* Video behind text */
+			}
+
+			/* Navigation*/
+			#top-left-nav {
+				position: fixed;
+				top: 10px; 
+				right: 10px;
+				background: rgba(0, 0, 0, 0.6);
+				padding: 10px 15px;
+				border-radius: 8px;
+				z-index: 1000; /* Above everything */
+			}
+
+			#top-left-nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex; /* Buttons in a row */
+				gap: 10px; 
+			}
+
+			#top-left-nav ul li {
+				margin: 0; /* No extra margin */
+			}
+
+			#top-left-nav ul li a {
+				color: white; /* White text */
+				text-decoration: none; /* No underline */
+				font-size: 16px;
+				display: block;
+				padding: 8px 12px;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 5px;
+				transition: background 0.3s ease-in-out;
+				white-space: nowrap; /* No text overlap */
+			}
+
+			#top-left-nav ul li a:hover {
+				background: rgba(255, 255, 255, 0.5); /* While hovers, opacity less */
+			}
+
+
+			/* Scrollable container for How It Works*/
+			#how-it-works-container {
+				width: 100%;
+				max-width: 800px;
+				margin: 0 auto; /* Center */
+				overflow: hidden;
+				position: relative;
+			}
+
+			#how-it-works-slider {
+				display: flex; /* Slides in row */
+				transition: transform 0.5s ease-in-out;
+			}
+
+			.how-it-works-slide {
+				min-width: 100%;	
+			}
+
+			.how-it-works-slide img {
+				width: 100%;
+				height: auto;
+				display: block;
+				object-fit: cover;
+			}
+
+			.how-it-works-caption {
+				font-size: 16px;
+				margin-top: 10px;
+			}
+
+			/* Scroll buttons */
+			.how-it-works-btn {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-100%); /* Centers upright */
+				background: rgba(0, 0, 0, 0.6);
+				color: white;
+				border: none;
+				padding: 10px;				
+				font-size: 18px;
+				z-index: 10;
+				border-radius: 80%; /* Circle button */
+			}
+
+			#prev-slide {
+				left: 10px;
+			}
+
+			#next-slide {
+				right: 10px;
+			}
+
+
+			.video-container {
+				width: 100%;
+				max-width: 800px; 
+				margin: 0 auto; /* Center */
+				overflow: hidden;
+			}
+
+			/* Vdo fits inside the container */
+			.video-container video {
+				width: 100%;
+				height: auto;
+				display: block;
+				object-fit: cover;
+				cursor: pointer; /* Supposed to make it clear clicking is possible */
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Landing page -->
+		<video id="bg-video" autoplay loop muted>
+			<source src="images/bg.mp4" type="video/mp4">
+		</video>
+
+		<!-- Navigation -->
+		<nav id="top-left-nav">
+			<ul>
+				<li><a href="#TheProblemWeSolve">The Problem We Solve</a></li>
+				<li><a href="#Features">Features</a></li>
+				<li><a href="#HowItWorks">How It Works</a></li>
+				<li><a href="#FuturePossibilities">Future Possibilities</a></li>
+				<li><a href="#TheTeam">The Team</a></li>
+			</ul>
+		</nav>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main Content -->
+			<div id="main">
+				
+				<!-- The Problem We Solve -->
+				<article id="TheProblemWeSolve">
+					<h2 class="major">The Problem We Solve</h2>
+					<div id="why-video-container" class="video-container">
+						<video id="why-video" autoplay muted playsinline onclick="playWhy2()">
+							<source src="images/why1.mp4" type="video/mp4">
+						</video>
+					</div>
+					<section class="problem-section">
+						<h3>The Problem We're Solving</h3>
+					<p>
+						Every day, people waste a surprising amount of time just trying to figure out what to wear.  
+						It might seem small, but it adds up. Studies show that the average person spends around 
+						<strong>102 hours a year</strong> on this decision. That's valuable time that could be spent on work, family, or 
+						even just getting a bit more sleep!  
+					</p>
+					<p>
+						But it's not just about time—there's also the stress. Standing in front of a full closet yet feeling like 
+						you have nothing to wear is frustrating and can knock your confidence before you've even left the house.  
+					</p>
+					<p>
+						On top of that, <strong>fast fashion</strong> is creating a massive environmental crisis. People buy more clothes 
+						than they need—often on impulse—and much of it ends up in landfills. The fashion industry alone produces 
+						<strong>92 million tons of textile waste</strong> every year, making it a serious environmental issue.
+					</p>
+					<section class="solution-section">
+						<h3>How MisMatch Fixes This</h3>
+						<ul>
+							<strong>Save time</strong> - No more wasting hours deciding what to wear.
+							<strong>Reduce stress</strong> - A personalized, AI-powered style assistant at your fingertips.
+							<strong>Boost confidence</strong> - Helping you feel great in your outfits.
+							<strong>Promote sustainability</strong> - Make the most of the wardrobe you already own.
+						</ul>
+					</section>
+					<section class="audience-section">
+						<h3>Target Audience</h3>
+						<p>Our app is built for:</p>
+						<ul>
+							<strong>Young professionals & students</strong> - Busy individuals who want to look great without the hassle.
+							<strong>Fashion enthusiasts</strong> - Those who love experimenting with styles and organizing their wardrobe.
+							<strong>Eco-conscious individuals</strong> - People who care about sustainability and reducing fashion waste.
+							<strong>Anyone who feels</strong> “I have nothing to wear” despite having a full closet!
+						</ul>
+						<p>
+							We're primarily focusing on <strong>Gen Z and Millennials (ages 18-35)</strong>—tech-savvy individuals who value convenience and sustainability.
+						</p>
+					</section>
+				
+					<section class="device-section">
+						<h3>Device Requirements</h3>
+						<ul>
+							<strong>Smartphones (iOS & Android)</strong> - Core platform for easy outfit selection and AR try-ons.
+							<strong>Tablet Support (Optional)</strong> - For users who prefer a larger screen experience.
+							<strong>Desktop Web Browser (Future Consideration)</strong> - Potential future expansion for wardrobe organization.
+						</ul>
+					</section>
+				
+					<section class="tech-section">
+						<h3>System Requirements</h3>
+						<ul>
+							<strong>Cloud Storage & Database</strong> - Secure storage for wardrobe images and AI-generated outfit suggestions.
+							<strong>AI Model</strong> - Machine learning algorithms (TensorFlow/PyTorch) for personalized outfit recommendations.
+							<strong>AR Functionality</strong> - Uses ARKit (iOS) & ARCore (Android) for a virtual try-on experience.
+							<strong>Camera Integration</strong> - Users can upload clothing images via their phone's camera.
+							<strong>Internet Access</strong> - Required for AI processing, image uploads, and syncing across devices. Offline mode may be introduced later.
+						</ul>
+					</section>
+				</article>
+
+				<!-- Features -->
+				<article id="Features">
+					<h2 class="major">Features</h2>
+					<div id="features-video-container" class="video-container">
+						<video id="features-video" autoplay muted playsinline>
+							<source src="images/feature.mp4" type="video/mp4">
+						</video>
+					</div>
+					<section class="feature-section">
+						<h3>🛍️ Digital Wardrobe Organizer</h3>
+						<p>
+							MisMatch lets users build a virtual version of their wardrobe by simply snapping photos of their clothes.  
+							The app’s built-in AI scans these images to recognize and categorize each item by <strong>type, color, and style</strong>,  
+							automatically organizing everything into a clean, digital catalog.
+						</p>
+						<p>
+							Users can manually tag items based on occasion, season, or personal style preferences—making it easier to search later.  
+							Instead of rummaging through piles of clothes, users can quickly browse their entire wardrobe in-app, whether at home or on the go.  
+							This <strong>saves time</strong> and helps users rediscover forgotten pieces.
+						</p>
+					</section>
+				
+					<section class="feature-section">
+						<h3>🤖 AI-Powered Outfit Recommendations</h3>
+						<p>
+							One of MisMatch's standout features is its <strong>smart outfit recommendation system</strong> powered by machine learning.  
+							The app considers factors like <strong>weather, user preferences, and upcoming plans</strong> to suggest tailored outfit combinations.  
+						</p>
+						<p>
+							For instance, if a user has a work meeting on a rainy day, the app might recommend a smart blazer paired with waterproof boots.  
+							Over time, MisMatch <strong>learns a user's style habits</strong>—whether they prefer casual wear, bold patterns, or neutral tones—  
+							allowing for even more personalized suggestions.
+						</p>
+					</section>
+				
+					<section class="feature-section">
+						<h3>🕶️ Virtual Try-On with AR</h3>
+						<p>
+							MisMatch integrates <strong>augmented reality (AR)</strong> to let users see how outfits will look on them without physically trying them on.  
+							Using their smartphone camera, users can view a real-time overlay of clothing items on their body.
+						</p>
+						<p>
+							This feature is perfect for experimenting with new outfits or seeing how an old dress pairs with a new jacket—  
+							<strong>without the hassle of changing multiple times</strong>.
+						</p>
+					</section>
+				
+					<section class="feature-section">
+						<h3>🌿 Sustainable Fashion Insights</h3>
+						<p>
+							Beyond convenience, MisMatch is designed to <strong>promote eco-friendly wardrobe habits</strong>.  
+							The app encourages users to maximize what they already own instead of defaulting to new purchases.
+						</p>
+						<p>
+							It tracks how often each item is worn and offers friendly reminders to rotate underused pieces.  
+							MisMatch also introduces users to <strong>sustainable brands</strong> and shares tips on reducing textile waste.  
+							For example, it might suggest styling a neglected pair of jeans differently or highlight a nearby clothing swap event.
+						</p>
+					</section>
+				
+					<section class="feature-section">
+						<h3>📅 Event & Weather Integration</h3>
+						<p>
+							MisMatch helps users dress appropriately for any situation by integrating <strong>event-based</strong> and  
+							<strong>weather-specific</strong> outfit suggestions.
+						</p>
+						<p>
+							Users can input upcoming occasions—dinner parties, job interviews, casual coffee dates—and the app  
+							<strong>cross-references this with the weather forecast</strong> to suggest stylish yet practical outfits.  
+							Whether it's a summer dress on a warm day or a layered outfit for a cold evening, MisMatch ensures users are always prepared.
+						</p>
+					</section>
+				
+					<section class="feature-section">
+						<h3>📊 User Insights & Wardrobe Analytics</h3>
+						<p>
+							For those who enjoy tracking their habits, MisMatch offers <strong>wardrobe analytics</strong>.  
+							Users can view data on their <strong>most worn items, favorite outfit combinations, and rarely used pieces</strong>.
+						</p>
+						<p>
+							These insights help users make smarter fashion decisions, such as investing in versatile staples  
+							or realizing they don't need another black jacket. The app may even suggest <strong>repurposing or donating</strong>  
+							lesser-used items, reinforcing its sustainability mission.
+						</p>
+					</section>
+				</article>
+
+				<!-- How It Works -->
+				<article id="HowItWorks">
+					<h2 class="major">How It Works</h2>
+
+					<div id="how-it-works-container">
+						<button id="prev-slide" class="how-it-works-btn"></button>
+
+						<div id="how-it-works-slider">
+							<div class="how-it-works-slide">
+								<img src="images/how1.png" alt="Step 1">
+								<p class="caption">Virtual Wardrobe Creation</p>
+							</div>
+							<div class="how-it-works-slide">
+								<img src="images/how2.png" alt="Step 2">
+								<p class="caption">Pick a Style or Theme</p>
+							</div>
+							<div class="how-it-works-slide">
+								<img src="images/how3.png" alt="Step 3">
+								<p class="caption">Virtual Try-On</p>
+							</div>
+							<div class="how-it-works-slide">
+								<img src="images/how4.png" alt="Step 4">
+								<p class="caption">Find Unmatched Clothes</p>
+							</div>
+						</div>
+
+						<button id="next-slide" class="how-it-works-btn"></button>
+					</div>
+				</article>
+
+				<!-- Future Possibilities -->
+				<article id="FuturePossibilities">
+					<h2 class="major">Future Possibilities</h2>
+					<div id="futures-video-container" class="video-container">
+						<video id="future-video" autoplay muted playsinline>
+							<source src="images/future.mp4" type="video/mp4">
+						</video>
+					</div>
+					<p>We aim to integrate AI-driven fashion assistance, clothing resale features, and sustainability tracking.</p>
+				</article>
+				
+				<!-- Team -->
+				<article id="TheTeam">
+					<h2 class="major">The Team</h2>
+					<span class="image main"><img src="images/salwa.png" alt="Our Team" /></span>
+					<p>Meet the passionate minds behind MisMatch.</p>
+					<ul>
+						<li><strong>Salwa Mehreen</strong> – Founder, CS major, Whitworth University</li>
+					</ul>
+					<span class="image main"><img src="images/rabi.png" alt="Our Team" style="width: 610px; height: 562px;" /></span> 
+    				<ul>
+       					<li><strong>Rabi Tayyab</strong> – Junior Developer, Mathematics,CS, Whitworth University</li>
+    				</ul>
+				</article>
+				
+
+			</div>
+
+		</div>
+
+
+
+	<!--  JS  -->
+	<script>
+
+		document.addEventListener("DOMContentLoaded", function () {
+			const navLinks = document.querySelectorAll("#top-left-nav ul li a"); // Getting navigation links inside nav menu
+			const articles = document.querySelectorAll("#main article"); // Getting all article section inside main content
+			const videos = document.querySelectorAll("video");
+
+			// Close button for all webpage
+			articles.forEach(article => {
+				let closeBtn = document.createElement("span"); 
+				closeBtn.innerHTML = "&#10006;"; // Unicode for X
+				closeBtn.classList.add("close"); 
+				article.appendChild(closeBtn); 
+
+				closeBtn.addEventListener("click", function () {
+					article.classList.remove("active"); // Hiding stuff when x is clicked
+					stopVideos(article); 
+				});
+			});
+
+			// Click event to eacch nav menu
+			navLinks.forEach(link => {
+				link.addEventListener("click", function (event) {
+					event.preventDefault(); 
+					// Getting target section id
+					const targetId = this.getAttribute("href").substring(1); // no "#"
+					const targetArticle = document.getElementById(targetId); 
+
+					if (targetArticle) {
+						articles.forEach(article => {
+							article.classList.remove("active");
+							stopVideos(article);
+						});
+
+						// Showing only clicked section
+						targetArticle.classList.add("active");
+						playVideos(targetArticle);
+					}
+				});
+			});
+
+			// Function stop vds inside a section
+			function stopVideos(section) {
+				let sectionVideos = section.querySelectorAll("video");
+				sectionVideos.forEach(video => {
+					video.pause(); 
+					video.currentTime = 0; // Reset
+				});
+			}
+
+			function playVideos(section) {
+				let sectionVideos = section.querySelectorAll("video");
+				sectionVideos.forEach(video => {
+					video.play(); // Start 
+				});
+			}
+		});
+
+		// FFor why we do this part
+		function playWhy2() {
+			let video = document.getElementById("why-video");
+			video.querySelector("source").src = "images/why2.mp4"; // Change video to why2
+			video.load(); 
+			video.play(); 
+		}
+
+
+		// Image slider for How It Works
+		let currentSlide = 0; 
+		const slides = document.querySelectorAll(".how-it-works-slide"); // All slide elements
+		const totalSlides = slides.length; 
+		const slider = document.getElementById("how-it-works-slider"); // Slider container
+
+		
+		document.getElementById("next-slide").addEventListener("click", function() {
+			if (currentSlide < totalSlides - 1) {
+				currentSlide++; 
+			} else {
+				currentSlide = 0; // Loop if last
+			}
+			updateSlidePosition();
+		});
+		document.getElementById("prev-slide").addEventListener("click", function() {
+			if (currentSlide > 0) {
+				currentSlide--; 
+			} else {
+				currentSlide = totalSlides - 1; 
+			}
+			updateSlidePosition();
+		});
+
+		// Updating pos of slider
+		function updateSlidePosition() {
+			slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+		}
+
+		</script>
+	</body>
+</html>
